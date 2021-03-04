@@ -1,0 +1,222 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.NUMERIC_STD.all;
+
+entity PrimeCheck is
+	
+	port( clk   : in std_logic;
+			reset : in std_logic;
+			start : in std_logic;
+			max   : in std_logic_vector(9 downto 0);
+			min   : in std_logic_vector(9 downto 0);
+			isPrime : out std_logic;
+			done    : out std_logic;
+			PrimeNumber : out std_logic_vector(9 downto 0));
+	
+end PrimeCheck;
+
+architecture GetTheJobDone of PrimeCheck is
+
+	signal numberToCheck : std_logic_vector(9 downto 0) := std_logic_vector(unsigned(min));
+	type State is (IDLE, DIV_2, DIV_3, DIV_5, DIV_7, DIV_11, DIV_13, DIV_17, DIV_19, DIV_23, DIV_29, DIV_31, INC);
+	signal PS, NS : State;
+	
+	begin 
+		
+	Reset_Section : process(clk, reset, start)
+   begin
+       if (rising_edge(clk)) then
+           if (reset = '0') then
+               PS <= IDLE;
+           elsif(start = '1') then
+               PS <= NS;
+           end if;
+       end if;
+   end process;
+	
+	Verification_Section : process(PS, numberToCheck, max)
+	begin
+		case PS is
+			when IDLE =>
+					if (to_integer(unsigned(numberToCheck)) = 0) then
+                   isPrime <= '0';
+                   NS <= INC;
+               elsif (to_integer(unsigned(numberToCheck)) = 1) then
+							 isPrime <= '0';
+						 	 NS <= INC;
+						else
+							NS <= DIV_2;
+					end if;
+					
+			when DIV_2 =>
+					if (numberToCheck = "0000000010") then
+						isPrime <= '1';
+						PrimeNumber <= numberToCheck;
+						NS <= INC;
+					elsif (numberToCheck(0) = '0') then
+							isPrime <= '0';
+							NS <= INC;
+						else
+							if (numberToCheck >= "0000001001") then
+								NS <= DIV_3;
+							else
+								isPrime <= '1';
+								PrimeNumber <= numberToCheck;
+								NS <= INC;
+							end if;
+					end if;
+					
+				when DIV_3 =>
+						if (to_integer(unsigned(numberToCheck)) rem 3 = 0)then
+							isPrime <= '0';
+							NS <= INC;
+						else
+							if (numberToCheck >= "0000011001") then
+								NS <= DIV_5;
+							else
+								isPrime <= '1';
+								PrimeNumber <= numberToCheck;
+								NS <= INC;	
+							end if;
+						end if;
+						
+				when DIV_5 =>
+						if (to_integer(unsigned(numberToCheck)) rem 5 = 0)then
+							isPrime <='0';
+							NS <= INC;
+						else
+							if (numberToCheck >= "0000110001") then
+								NS <= DIV_7;
+							else
+								isPrime <= '1';
+								PrimeNumber <= numberToCheck;
+								NS <= INC;
+								
+							end if;
+						end if;
+				
+				when DIV_7 =>
+						if (to_integer(unsigned(numberToCheck)) rem 7 = 0)then
+							isPrime <='0';
+							NS <= INC;
+						else
+							if (numberToCheck >= "0001111001") then
+								NS <= DIV_11;
+							else
+								isPrime <= '1';
+								PrimeNumber <= numberToCheck;
+								NS <= INC;
+								
+							end if;
+						end if;
+						
+				when DIV_11 =>
+						if (to_integer(unsigned(numberToCheck)) rem 11 = 0)then
+							isPrime <='0';
+							NS <= INC;
+						else
+							if (numberToCheck >= "0010101001") then
+								NS <= DIV_13;
+							else
+								isPrime <= '1';
+								PrimeNumber <= numberToCheck;
+								NS <= INC;
+								
+							end if;
+						end if;
+				
+				when DIV_13 =>
+						if (to_integer(unsigned(numberToCheck)) rem 13 = 0)then
+							isPrime <='0';
+							NS <= INC;
+						else
+							if (numberToCheck >= "0100100001") then
+								NS <= DIV_17;
+							else
+								isPrime <= '1';
+								PrimeNumber <= numberToCheck;
+								NS <= INC;
+							end if;
+						end if;
+				
+				when DIV_17 =>
+						if (to_integer(unsigned(numberToCheck)) rem 17 = 0)then
+							isPrime <='0';
+							NS <= INC;
+						else
+							if (numberToCheck >= "0101101001") then
+								NS <= DIV_19;
+							else
+								isPrime <= '1';
+								PrimeNumber <= numberToCheck;
+								NS <= INC;
+							end if;
+						end if;
+						
+				when DIV_19 =>
+						if (to_integer(unsigned(numberToCheck)) rem 19 = 0)then
+							isPrime <='0';
+							NS <= INC;
+						else
+							if (numberToCheck >= "1000010001") then
+								NS <= DIV_23;
+							else
+								isPrime <= '1';
+								PrimeNumber <= numberToCheck;
+								NS <= INC;
+							end if;
+						end if;
+						
+				when DIV_23 =>
+						if (to_integer(unsigned(numberToCheck)) rem 23 = 0) then
+							isPrime <='0';
+							NS <= INC;
+						else
+							if (numberToCheck >= "1101001001") then
+								NS <= DIV_29;
+							else
+								isPrime <= '1';
+								PrimeNumber <= numberToCheck;
+								NS <= INC;
+							end if;
+						end if;
+						
+				when DIV_29 =>
+						if (to_integer(unsigned(numberToCheck)) rem 29 = 0)then
+							isPrime <='0';
+							NS <= INC;
+						else
+							if (numberToCheck >= "111000001") then
+								NS <= DIV_31;
+							else
+								isPrime <= '1';
+								PrimeNumber <= numberToCheck;
+								NS <= INC;
+							end if;
+						end if;
+						
+				when DIV_31 =>
+						if (to_integer(unsigned(numberToCheck)) rem 31 = 0) then
+							isPrime <='0';
+							NS <= INC;
+						else
+							isPrime <= '1';
+							PrimeNumber <= numberToCheck;
+							NS <= INC;
+						end if;
+					
+				when INC =>
+						if (unsigned(numberToCheck) < unsigned(max)) then
+							numberToCheck <= std_logic_vector(unsigned(numberToCheck) + 1);
+							NS <= IDLE;
+						else 
+							done <= '1';
+						end if;
+						
+				when others =>
+						NS <= IDLE;
+				
+			end case;	
+		end process;
+		
+end GetTheJobDone;
