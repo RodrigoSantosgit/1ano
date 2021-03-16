@@ -1,0 +1,56 @@
+CREATE TABLE samples(
+id_s INTEGER PRIMARY KEY AUTOINCREMENT,
+name TEXT,
+length INTEGER,
+date TEXT,
+author TEXT,
+bpm INTEGER,
+uses INTEGER
+);
+
+DROP TABLE samples;
+
+Insert into samples(id_s, name, length, date, author, bpm, uses) VALUES ("Mendes", 22, "hoje", "eu", 32, 32);
+
+UPDATE samples SET votes = ? WHERE name = ?;
+
+DELETE FROM samples WHERE name = ?;
+
+ALTER TABLE samples ADD id_s INTEGER;
+
+ALTER TABLE users_votes ADD ? TEXT;
+
+ALTER TABLE users_votes DROP COLUMN ?;
+
+UPDATE contacts SET ? = ? WHERE comp_id = ?;
+
+
+Insert into samples(id_s ,name, length, date, author, bpm, uses) VALUES ("1" ,"claves.wav", 0, "14/06/2018", "unknown", 0, 0);
+Insert into samples(id_s ,name, length, date, author, bpm, uses) VALUES ("2" ,"conga.wav", 0, "14/06/2018", "unknown", 0, 0);
+Insert into samples(id_s ,name, length, date, author, bpm, uses) VALUES ("3" ,"conga2.wav", 0, "14/06/2018", "unknown", 0, 0);
+Insert into samples(id_s ,name, length, date, author, bpm, uses) VALUES ("4" ,"clash.wav", 0, "14/06/2018", "unknown", 0, 0);
+Insert into samples(id_s ,name, length, date, author, bpm, uses) VALUES ("5" ,"gun.wav", 0, "14/06/2018", "unknown", 0, 0);
+Insert into samples(id_s ,name, length, date, author, bpm, uses) VALUES ("6" ,"hat.wav", 0, "14/06/2018", "unknown", 0, 0);
+Insert into samples(id_s ,name, length, date, author, bpm, uses) VALUES ("7" ,"shaker.wav", 0, "14/06/2018", "unknown", 0, 0);
+Insert into samples(id_s ,name, length, date, author, bpm, uses) VALUES ("8" ,"stick.wav", 0, "14/06/2018", "unknown", 0, 0);
+Insert into samples(id_s ,name, length, date, author, bpm, uses) VALUES ("9" ,"tom.wav", 0, "14/06/2018", "unknown", 0, 0);
+Insert into samples(id_s ,name, length, date, author, bpm, uses) VALUES ("10" ,"tom2.wav", 0, "14/06/2018", "unknown", 0, 0);
+Insert into samples(id_s ,name, length, date, author, bpm, uses) VALUES ("11" ,"triangle.wav", 0, "14/06/2018", "unknown", 0, 0);
+
+
+CREATE TABLE musics(
+id_m INTEGER PRIMARY KEY AUTOINCREMENT,
+name TEXT,
+length INTEGER,
+date TEXT,
+author TEXT,
+bpm INTEGER,
+votes INTEGER
+);
+
+CREATE TABLE users_votes(
+id_u INTEGER PRIMARY KEY AUTOINCREMENT,
+name TEXT
+);
+
+
