@@ -1,0 +1,106 @@
+<html lang="pt">
+	<head>
+		<meta charset="utf-8">
+		<title>Monitores </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Bootstrap minified CSS -->
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
+		<style>
+		body{
+			font-family: ’Bellefair’, serif;
+			font-size: 15px;
+		
+		}
+		h3{
+			color: green;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+		<nav class="navbar navbar-default">
+			<div class="navbar-header">
+			<a class="navbar-brand" href="index.html">Monitores</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="resolucao.html">Resolução</a></li>
+				<li><a href="cores.html">Cores</a></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Tipos de Monitor<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="hist.html">Evolução</a></li>
+						<li class="divider"></li><li><a href="crtvslcd.html">Monitores LCD vs CRT</a></li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="active"><a href="about.html">Acerca</a></li>
+			</ul>
+		</div>
+		</nav>
+		
+		<br/>
+		<h1 style="position: relative; left: 470px; color: green;"> Resolução </h1>
+		<br/>
+		<h3>O que é...</h3>
+
+		Um fator muito importante nos monitores atuais é a sua resolução.
+		Sendo esta o número máximo de píxeis capazes de serem mostrados em cada
+		dimensão do monitor, isto é horizontalmente e verticalmente. Quando nos referimos á resolução, normalmente referimos da forma largura/altura, e utilizando
+		como unidade o pixel, por exemplo quando mencionamos uma resolução do tipo
+		"1920x1080"isto significa que a largura é de 1920 píxeis e a altura é de 1080
+		píxeis, originando também 1920 linhas de píxeis e 1080 colunas de píxeis, o que
+		perfaz um total de 2,073,600 píxeis para um monitor com uma resolução deste
+		tipo.
+		
+		<h3>Qual a sua importância...</h3>
+
+		No entanto é um termo ambíguo especialmente porque a resolução mostrada é
+		controlada por diferentes fatores dependendo do tipo de monitor em causa.
+		Monitores do tipo Liquid Crystal Display (LCD), Plasma Display Panels (PDP), Digital Light Processing (DLP), entre outros similares exibem um número fixo de píxeis (fixed-pixel-array displays),ou seja pussuem uma única resolução nativa possível, nestes casos o uso do termo resolução refere-se simplesmente ao número de colunas e
+		linhas de píxeis que criam a imagem mostrada no monitor. Uma das desvantagens deste tipo de monitores é que todos eles precisam de um sistema de
+		escalonamento; um processador de video digital que contem um array de memória; para fazer corresponder uma imagem ou video com formato diferente ao
+		do monitor para que este seja então exibido. O que pode gerar artefactos nas
+		imagens se o monitor for forçado a trabalhar numa resolução não nativa.<br/>
+		O gráfico abaixo apresenta os tipos de resolução mais utilizados atualmente, segundo os dados recolhidos através das visitas de utilizadores da web a mais de 2,5 milhões de 			websites, durante Maio de 2017:
+		<br/>
+		<div id="grafico-colunas" style="width: 450px; height: 350px; position: relative; left: 325px;"></div>
+		<script type="text/javascript" src="grafico-colunas.js"></script>
+		<button class="btn btn-success" onclick="desenhaG()" style="position: relative; left: 470px;">Gráfico de Percentagens</button><p></p>
+		<br/>
+		<ul>
+			<li><b>HD </b>-> High Definition</li>
+			<li><b>FHD </b>-> Full High Definition</li>
+			<li><b>WXGA+ </b>-> Widescreen Extended Graphics Array Plus</li>
+			<li><b>HD+ </b>-> High Definition Plus</li>
+			<li><b>WXGA </b>-> Widescreen Extended Graphics Array</li>
+		</ul>
+
+		<p></p>Dois monitores com a mesma resolução podem ter dimensões diferentes dependendo mais uma vez do tipo de monitor em causa, se este for LCD uma dimensão
+		de 17 polegadas (unidade de medida utilizada para determinar o tamanho de
+		dispositivos de exibição, que é a distância entre um canto superior do monitor
+		ao canto inferior oposto) terá a mesma zona visivel de um monitor CRT com
+		uma dimensão de 19 polegadas. A proporção da tela é um fator relacionado
+		com a resolução de um monitor, uma vez que é a relação entre o número de
+		píxeis existentes em cada coluna de píxeis e o número de píxeis existentes em
+		cada linha de píxeis do monitor. A proporção está por sua vez relacionada com
+		o padrão de exibição.
+		<p></p>A figura a seguir contém os diferentes tipos de resoluções e proporções de
+		tela e associa-os aos diferentes padrões de exibição existentes:
+		<p></p>
+		<div>
+		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Vector_Video_Standards8.svg/1920px-Vector_Video_Standards8.svg.png" style="width: 870px; position: relative; left: 115px;"></img>
+		</div>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Image By Jedi787plus - <a class="external free" href="https://en.wikipedia.org/wiki/File:Vector_Video_Standards4.svg">https://en.wikipedia.org/wiki/File:Vector_Video_Standards4.svg</a>, <a href="http://www.gnu.org/copyleft/fdl.html" title="GNU Free Documentation License">GFDL</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=37694717">Link</a>
+		<br/>
+		<br/>
+	</body>
+</html>

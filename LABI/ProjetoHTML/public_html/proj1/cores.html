@@ -1,0 +1,87 @@
+<html lang="pt">
+	<head>
+		<meta charset="utf-8">
+		<title>Monitores </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Bootstrap minified CSS -->
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
+		<style>
+		body{
+			font-family: ’Bellefair’, serif;
+			font-size: 15px;
+		}
+                 h3{
+			color: green;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+		<nav class="navbar navbar-default">
+			<div class="navbar-header">
+			<a class="navbar-brand" href="index.html">Monitores</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="resolucao.html">Resolução</a></li>
+				<li class="active"><a href="cores.html">Cores</a></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Tipos de Monitor<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="hist.html">Evolução</a></li>
+						<li class="divider"></li><li><a href="crtvslcd.html">Monitores LCD vs CRT</a></li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="active"><a href="about.html">Acerca</a></li>
+			</ul>
+		</div>
+		</nav>
+		<br/>
+                <h1 style="position: relative; left: 485px; color: green;"> Cores </h1>
+		<br/>
+		<h3>Pixel...</h3>
+                <p><p/> Um pixel é o menor elemento num dispositivo de exibição (por exemplo, um monitor), ao qual é possível atribuir-se uma cor. De uma forma mais simples,um pixel é o menor ponto que forma uma imagem digital, sendo que o conjunto de píxeis formam a imagem inteira. Cada pixel tem interiormente 3 subpíxeis,um vermelho, um verde e outro azul; dependendo do brilho da cada um dos subpíxeis, o pixel adquire uma cor de forma semelhante à composição de cores RGB. Red Green and Blue (RGB) é a abreviatura do sistema de cores aditivas formado por Vermelho (Red), Verde (Green) e Azul (Blue).
+               <br/><br/>
+               <img src="imagens/RGB.jpg" style="position: relative; left: 425px; width: 250px;"></img>
+		<br/>
+                              
+
+ <p><p/> O propósito principal do sistema RGB é a reprodução de cores em dispositivos eletrónicos como monitores de televisão e computador, retroprojetores, scanners e câmaras digitais, assim como na fotografia tradicional. Uma pergunta que se surge bastante quando se fala sobre o tópicos das cores num monitor é:
+
+
+ <h3>Como se deve organizar os subpíxeis de um monitor?</h3>
+
+ 
+       Costumam-se organizar em linhas verticais, mas para melhorar a sensação de movimento, é melhor organizá-los em diagonal ou em triângulos. O conhecimento do tipo de organização de píxeis, pode ser utilizado para melhorar a visualização de imagens de mapas de bits, um mapa de bit são imagens que contêm a descrição de cada pixel. Outro termo que é muito utilizado no que toca a cores num monitor é:
+
+         <h3> Profundidade de cor: </h3> 
+
+
+<br/>
+	<div id="grafico-colun" style="width: 450px; height: 550px; position: relative; left: 325px;"></div>
+	<script type="text/javascript" src="grafico-colun.js"></script>
+	<button class="btn btn-success" onclick="desenhoG()" style="position: relative; left: 425px;">Gráfico sobre a Profundidade de cor</button><p></p>
+		
+<br/>
+
+
+
+
+a maior parte dos monitores têm uma profundidade de 8 bits por cor (24 bits ao todo), isto é, podem representar aproximadamente 16,8 milhões de cores diferentes. A profundidade de cor é um termo da computação gráfica que descreve a quantidade de bits usados para representar a cor de um único pixel numa imagem bitmap. Este conceito é conhecido também como bits por pixel (bpp), particularmente quando especificado junto com o número de bits usados. Quanto maior a quantidade da profundidade da cor presente na imagem, maior é a escala de cores disponível. <br/><br/>
+Por fim podemos verificar pela comparação entre as próximas duas imagens, que devido ao facto de os subpíxeis do monitor LCD estarem muito melhor organizados que os subpíxeis do monitor CRT a qualidade da imagem no LCD é muito melhor que no CRT.
+ <br/><br/>
+               <img src="imagens/comp.jpg" style="position: relative; left: 380px; width: 400px;"></img>
+		<br/>
+		<br/>
+		
+	</body>
+</html>
